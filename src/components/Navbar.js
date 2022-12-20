@@ -2,16 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 
-export default function Navbar(props) {
+export default function Navbar(props) { 
   let myStyle = {
-    color:red;
-    background-color:yellow;
+    color: 'red',
+    backgroundColor:'black',
 
   }
   return (
     <>
    
-        <nav className="navbar navbar-expand-lg bg-light={myStyle} style">
+        <nav className={'navbar navbar-expand-lg navbar-${props.mode} style={myStyle}'}>
   <div className="container-fluid">
     <a className="navbar-brand" href="/">{props.title}</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,27 +22,22 @@ export default function Navbar(props) {
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="/">About</a>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a className="nav-link" href="/">Tech Used</a>
-        </li>
+        </li> */}
        
       </ul>
       
     </div>
     <div className="form-check form-switch form-check-reverse">
-  <input className="form-check-input" type="checkbox" id="flexSwitchCheckReverse"/>
-  <label className="form-check-label" for="flexSwitchCheckReverse">Enable Dark mode</label>
+  <input className="form-check-input" onClick={props.togleMode} type="checkbox" id="flexSwitchCheckReverse"/>
+  <label className="form-check-label" htmlFor="flexSwitchCheckReverse">Enable Dark mode</label>
 </div>
   </div>
 </nav>
 
 
-{/* <div className="form-floating">
-  <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{height: "100px"}}></textarea>
-  <label htmlFor="floatingTextarea2">Comments</label>
-</div> 
 
-<button type="button" className="btn btn-primary">Click to uppercase</button> */}
     </>
     
   )

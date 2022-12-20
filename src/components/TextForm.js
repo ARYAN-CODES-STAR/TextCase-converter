@@ -34,6 +34,18 @@ export default function TextForm(props) {
   }
 
   
+
+
+  const handleUpClick3 = ()=>{
+    console.log(" clicked" + text);
+    let newText= text;
+    setText(newText)
+
+  }
+
+
+
+  
   const [text1, setText1] = useState("Enter text here");
 
 
@@ -67,6 +79,9 @@ export default function TextForm(props) {
 
       <button className="btn btn-primary inline-block flex p-8" onClick={handleUpClick2}>Clear Input</button>
 
+
+      <button className="btn btn-primary inline-block flex p-8" onClick={handleUpClick3}>Undo</button>
+      
     </>
 
   )
